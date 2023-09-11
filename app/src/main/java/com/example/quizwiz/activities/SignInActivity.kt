@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.util.Patterns
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.quizwiz.R
 import com.example.quizwiz.constants.Base
 import com.example.quizwiz.databinding.ActivitySignInBinding
 import com.example.quizwiz.fireBase.FireBaseClass
@@ -35,7 +36,7 @@ class SignInActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("610678738814-idt8ukhjbf3cv7mhgtbm7t093lc62usv.apps.googleusercontent.com")
+            .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this,gso)
